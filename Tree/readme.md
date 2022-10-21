@@ -104,7 +104,8 @@ def level_order_1(root):
             return
         if len(ret) == depth:
             ret.append([])
-        ret[depth].append(node.v)
+        ret[depth].append(node.v) #	我一开始写错了，写成 ret[-1].append(node.v)，跟踪它的遍历顺序知道它不是一层一层遍历的，而是深度优先，需要找到对应的层写入结果）
+
         if node.left is not None:
             dfs(node.left, ret, depth+1)
         if node.right is not None:
